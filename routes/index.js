@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-var usersCounter = 0;
-var appTitle = "icebox";
+var properties = {
+  title: "icecache",
+  users: 0
+};
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: appTitle, users: usersCounter});
+  res.render('index', properties);
 });
 
 module.exports = router;
