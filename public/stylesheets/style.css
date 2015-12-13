@@ -1,12 +1,12 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  body a {
+    color: salmon; }
 
-a {
-  color: #00B7FF;
-}
+.title {
+  text-decoration: underline; }
 
-h1 {
-  text-decoration: underline;
-}
+footer {
+  bottom: 0;
+  position: absolute; }
