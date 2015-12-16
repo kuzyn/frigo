@@ -1,12 +1,55 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: auto;
+  height: auto;
+  border: 3px grey dotted;
+  padding: 5px; }
   body a {
-    color: salmon; }
+    color: salmon;
+    text-decoration: none; }
+    body a:active, body a:hover {
+      color: #e41f08; }
+
+#items-list {
+  height: auto; }
+  #items-list p, #items-list .route-container .code {
+    margin-top: 0em;
+    margin-bottom: 0em; }
+  #items-list .route-container {
+    height: auto;
+    color: #404040;
+    margin: 2em 0; }
+    #items-list .route-container .route-details {
+      padding-left: 1em;
+      font-size: smaller; }
+    #items-list .route-container .route {
+      font-weight: bold;
+      font-size: large; }
+    #items-list .route-container .operation {
+      text-transform: uppercase;
+      font-size: large; }
+      #items-list .route-container .operation.get {
+        background-color: lightgreen; }
+      #items-list .route-container .operation.post {
+        background-color: orange; }
+    #items-list .route-container .code {
+      background-color: lightgrey;
+      font-family: monospace;
+      color: black; }
+
+header {
+  padding: 10px 20px 30px 20px; }
 
 .title {
+  color: cornflowerblue;
   text-decoration: underline; }
 
 footer {
+  height: 20px;
   bottom: 0;
-  position: absolute; }
+  position: absolute;
+  padding: 5px;
+  margin: 5px;
+  text-align: center; }
+  footer a {
+    font-size: smaller; }

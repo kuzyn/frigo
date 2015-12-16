@@ -4,7 +4,7 @@ var sass = require('gulp-sass');
 
 gulp.task('browser-sync', function () {
   browserSync({
-    proxy: 'http://localhost:3000',
+    proxy: 'http://localhost:3000/api/docs',
     port: 4000,
     browser: ['chromium-browser']
   });

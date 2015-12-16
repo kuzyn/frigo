@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  header
+    .container
+      h1.title= title
+      p.under-title welcome to the #[a(href= url) #{title}] api.
+  #items-list
+    .container
+      .route-container
+        p.route /api/messages
+        .route-details
+          p.operation.get get
+          p.description Retrieve a list of all messages
+          p.parameters Parameters
+          p.example Example
+          p.result Result:
+          pre.code []
+      .route-container
+        p.route /api/messages
+        .route-details
+          p.operation.post post
+          p.description Create a new message
+          p.parameters Parameters:
+          p.example Example:
+          p.result Result: 
+          pre.code []
+  #api-tester
+    .container
+      p (API tester)        
+  footer
+    .container
+      #[a(href="http://samuelcousin.com") made with transient ❤ in iceland]
