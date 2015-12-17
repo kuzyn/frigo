@@ -48,6 +48,7 @@ body {
     .operation {
       text-transform: uppercase;
       font-size: large;
+      width: 75px;
       &.get {
         background-color: lightgreen;
       }
@@ -66,6 +67,7 @@ body {
     }
     .code {
       @extend p;
+      width: 33.33333%;
       background-color: lightgrey;
       font-family: monospace;
       color: black;
@@ -79,7 +81,9 @@ header {
 }
 .title {
   color: $titleFontColor;
-  text-decoration: underline;
+  border: 2px solid;
+  width: 3em;
+  padding-left: 0.25em;
 }
 .under-title {
 }

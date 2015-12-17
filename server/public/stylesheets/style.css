@@ -27,12 +27,14 @@ body {
       font-size: large; }
     #items-list .route-container .operation {
       text-transform: uppercase;
-      font-size: large; }
+      font-size: large;
+      width: 75px; }
       #items-list .route-container .operation.get {
         background-color: lightgreen; }
       #items-list .route-container .operation.post {
         background-color: orange; }
     #items-list .route-container .code {
+      width: 33.33333%;
       background-color: lightgrey;
       font-family: monospace;
       color: black; }
@@ -42,7 +44,9 @@ header {
 
 .title {
   color: cornflowerblue;
-  text-decoration: underline; }
+  border: 2px solid;
+  width: 3em;
+  padding-left: 0.25em; }
 
 footer {
   height: 20px;

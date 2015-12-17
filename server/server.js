@@ -9,7 +9,7 @@ var messages = require('./routes/messages');
 // Databases
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/icecache_data');
+var db = monk('localhost:27017/frigo');
 
 // Boom
 var app = express();
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 // Local app config
 app.locals.title = 'frigo';
 app.locals.email = 'hello@samuelcousin.com';
-app.locals.url = 'http://frigo.com';
+app.locals.url = 'http://localhost:4000';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

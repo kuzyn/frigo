@@ -8,7 +8,7 @@ block content
   #items-list
     .container
       .route-container
-        p.route /api/messages
+        p.route #[a(href= url+'/api/messages') /api/messages]
         .route-details
           p.operation.get get
           p.description Retrieve a list of all messages
@@ -17,7 +17,7 @@ block content
           p.result Result:
           pre.code []
       .route-container
-        p.route /api/messages
+        p.route #[a(href= url+'/api/messages') /api/messages]
         .route-details
           p.operation.post post
           p.description Create a new message
@@ -30,4 +30,4 @@ block content
       p (API tester)        
   footer
     .container
-      #[a(href="http://samuelcousin.com") made with transient ❤ in iceland]
+      a(href="http://samuelcousin.com") made with transient ❤ in iceland

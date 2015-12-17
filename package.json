@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "develop": "nodemon ./bin/www & gulp"
+    "serve": "node ./server/bin/www",
+    "serve:develop": "nodemon ./server/bin/www & gulp"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
+    "ember": "^1.0.0-pre.2",
     "express": "~4.13.1",
+    "handlebars": "^4.0.5",
     "jade": "~1.11.0",
     "lodash": "^3.10.1",
     "mongodb": "^1.4.39",

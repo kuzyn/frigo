@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('icecache:server');
+var app = require('../server');
+var debug = require('debug')('frigo:server');
 var http = require('http');
 
 /**
