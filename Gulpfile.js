@@ -11,20 +11,20 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('js',  function () {
-  return gulp.src('server/public/**/*.js')
+  return gulp.src('./public/**/*.js')
     // do stuff to JavaScript files
     .pipe(browserSync.reload());
 });
 
 gulp.task('css', function () {
-  return gulp.src('server/public/**/*.css')
+  return gulp.src('./public/**/*.css')
     .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('sass', function() {
-  gulp.src('server/public/stylesheets/sass/**/*.scss')
+  gulp.src('./public/stylesheets/sass/**/*.scss')
   .pipe(sass().on('error', sass.logError))
-  .pipe(gulp.dest('server/public/stylesheets/'));
+  .pipe(gulp.dest('./public/stylesheets/'));
 });
 
 gulp.task('bs-reload', function () {
@@ -38,9 +38,9 @@ gulp.task('bs-reload-delay', function () {
 });
 
 gulp.task('default', ['browser-sync'], function () {
-  gulp.watch('server/public/**/*.js',   ['js']);
-  gulp.watch('server/public/**/*.scss',  ['sass']);
-  gulp.watch('server/public/**/*.css',  ['css']);
-  gulp.watch('server/views/**/*.jade', ['bs-reload']);
-  gulp.watch(['server/routes/**/*.js', 'server/bin/www', 'server/server.js'], ['bs-reload-delay']);
+  gulp.watch('./public/**/*.js',   ['js']);
+  gulp.watch('./public/**/*.scss',  ['sass']);
+  gulp.watch('./public/**/*.css',  ['css']);
+  gulp.watch('./views/**/*.jade', ['bs-reload']);
+  gulp.watch(['./routes/**/*.js', './bin/www', './app.js'], ['bs-reload-delay']);
 });

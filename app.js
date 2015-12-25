@@ -6,6 +6,9 @@ var bodyParser = require('body-parser');
 var docs = require('./routes/docs');
 var messages = require('./routes/messages');
 
+// Client route
+var client = require('./routes/client');
+
 // Databases
 var mongo = require('mongodb');
 var monk = require('monk');
@@ -35,12 +38,13 @@ app.use(function(req, res, next){
   next();
 });
 
-// app landing
-// app.use('/', client);
 
 // API endpoints
 app.use('/api/docs', docs);
 app.use('/api/messages', messages);
+
+// App landing
+app.use('/', client);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

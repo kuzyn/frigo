@@ -34,8 +34,8 @@ router.post('/', function(req, res) {
     var payload = {
       message: req.body.message,
       meta: {
-        keyword: req.body.keyword,
-        location: req.body.location
+        keyword: req.body.meta.keyword,
+        location: req.body.meta.location
       }
     };
     collection.insert(payload, function (err, doc) {
@@ -48,10 +48,12 @@ router.post('/', function(req, res) {
   // simple validation before posting to db
   function validate(body) {
     if (!_.isUndefined(body) && !_.isEmpty(body)) {
-      if (!_.isEmpty(body.message) && !_.isEmpty(body.keyword) && !_.isEmpty(body.location)) {
+      if (!_.isEmpty(body.message) && !_.isEmpty(body.meta.keyword) && !_.isEmpty(body.meta.location)) {
+        console.log('body false' + JSON.stringify(body));
         return true;
       }
     }
+    console.log('body false' + JSON.stringify(body));
     return false;
   }
 
