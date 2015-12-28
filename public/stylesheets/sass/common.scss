@@ -1,0 +1,54 @@
+// Variables
+$bodyFontColor: black;
+$bodyFontColorLight: lighten($bodyFontColor, 25%);
+$titleFontColor: cornflowerblue;
+$linkColor: salmon;
+
+// Global
+html {
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: auto;
+  height: auto;
+  border: 3px grey dotted;
+  padding: 5px;
+  a {
+    color: $linkColor;
+    text-decoration: none;
+  &:active, &:hover {
+    color: darken($linkColor, 25%);
+    }
+  }
+}
+
+// Content
+.container {
+  padding: 10px 20px 20px 20px;
+}
+
+// Header
+header {
+}
+.title {
+  color: $titleFontColor;
+  border: 2px solid;
+  width: 3em;
+  padding-left: 0.25em;
+}
+.under-title {
+}
+
+// Footer
+footer {
+  height: 20px;
+  bottom: 0;
+  position: absolute;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  a {
+    font-size: smaller;
+  }
+}

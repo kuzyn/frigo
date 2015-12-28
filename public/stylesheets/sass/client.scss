@@ -1,0 +1,17 @@
+@include "common.scss";
+
+#message-list {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li span {
+      margin: 0 40px;
+      &:first-child {
+        margin: 0 40px 0 0;
+      }
+    }
+  }
+  .loader {
+    position: absolute;
+  }
+}

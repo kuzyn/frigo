@@ -24,7 +24,7 @@ gulp.task('css', function () {
 gulp.task('sass', function() {
   gulp.src('./public/stylesheets/sass/**/*.scss')
   .pipe(sass().on('error', sass.logError))
-  .pipe(gulp.dest('./public/stylesheets/'));
+  .pipe(gulp.dest('./public/stylesheets/style.css'));
 });
 
 gulp.task('bs-reload', function () {

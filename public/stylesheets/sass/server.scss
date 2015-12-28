@@ -1,0 +1,48 @@
+@include "common.scss";
+
+#items-list {
+    height: auto;
+  p {
+    margin-top: 0em;
+    margin-bottom: 0em;
+  }
+  .route-container {
+    height: auto;
+    color: $bodyFontColorLight;
+    margin: 2em 0;
+    .route-details {
+      padding-left: 1em;
+      font-size: smaller;
+    }
+    .route {
+      font-weight: bold;
+      font-size: large;
+    }
+    .operation {
+      text-transform: uppercase;
+      font-size: large;
+      width: 75px;
+      &.get {
+        background-color: lightgreen;
+      }
+      &.post {
+        background-color: orange;
+      }
+    }
+    .description {
+    }
+    .parameters {
+    }
+    .example {
+    }
+    .result {
+    }
+    .code {
+      @extend p;
+      width: 33.33333%;
+      background-color: lightgrey;
+      font-family: monospace;
+      color: black;
+    }
+  }
+}
