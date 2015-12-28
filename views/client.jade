@@ -1,0 +1,25 @@
+extends layout
+
+include ./partials/mixins.jade
+
+block content
+  header
+    .container
+      h1.title #[a(href= url) #{title}]
+      p.under-title welcome to #[b #{title}], a place where you can anonymously leave messages, tips, announcements. anything goes.
+  
+  #post-message
+    .container
+      form(id="new-message", action="/api/messages")
+        input(name="form-message", type="text", placeholder="message", required="true")
+        input(name="form-keyword", type="text", placeholder="keyword", required="true")
+        button(type="submit") post
+  #message-list
+    .container
+      .loader loading...
+      ul
+      
+  footer
+    .container
+      a(href="http://samuelcousin.com") made with transient ❤ in iceland
+    +scripts

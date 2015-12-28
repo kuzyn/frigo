@@ -10,6 +10,9 @@ body {
     body a:active, body a:hover {
       color: #e41f08; }
 
+.container {
+  padding: 10px 20px 20px 20px; }
+
 #items-list {
   height: auto; }
   #items-list p, #items-list .route-container .code {
@@ -39,8 +42,16 @@ body {
       font-family: monospace;
       color: black; }
 
-header {
-  padding: 10px 20px 30px 20px; }
+#message-list ul {
+  list-style-type: none;
+  padding-left: 0; }
+  #message-list ul li span {
+    margin: 0 40px; }
+    #message-list ul li span:first-child {
+      margin: 0 40px 0 0; }
+
+#message-list .loader {
+  position: absolute; }
 
 .title {
   color: cornflowerblue;

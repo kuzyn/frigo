@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "serve": "node ./server/bin/www",
-    "serve:develop": "nodemon ./server/bin/www & gulp"
+    "serve": "node ./bin/www",
+    "serve:develop": "nodemon ./bin/www & gulp"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
