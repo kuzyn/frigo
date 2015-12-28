@@ -11,34 +11,46 @@
     $('#new-message').submit(function(event){
       event.preventDefault();
       var $form = $(this);
-      var location = 'iceland';
       var url = $form.attr('action');
-
       var payload = {
         message: $form.find('input[name="form-message"]').val(),
         meta: {
           keyword: $form.find('input[name="form-keyword"]').val(),
-          location: location
+          location: 'unknown'
         }
       };
 
-      var postXhr = $.post(url, payload)
+       $.get('http://freegeoip.net/json/', function(){})
+      .done(function(data) {
+        payload.meta.location = data.country_name.toLowerCase();
+      })
+      .fail(function(error) {
+        console.log(error);
+      })
+      .always(function(){
+        postMessage(url, payload);
+      });
+
+
+    });
+
+    // Helpers
+
+    function postMessage(_url, _payload) {
+      $.post(_url, _payload)
       .done(function(data) {
         console.log("done :)");
         getItemsList();
       })
       .fail(function(data) {
         console.log('fail!', data);
-      })
-      .always(function() {
       });
-    });
+    }
 
-    // Helpers
     function getItemsList() {
       var $messageListContainer = $('#message-list').find('.container ul');
       var $loaderContainer = $('#message-list').find('.container .loader');
-      var messagesXhr = $.get( API_URL + 'messages', function(data) {
+      var messagesXhr = $.get( API_URL + 'messages', function() {
         $messageListContainer.html('');
       })
       .done(function(data) {
@@ -49,7 +61,9 @@
           $messageListContainer.append('<li><span>' + item.message + '</span><span>' + item.meta.keyword + '</span><span>' + item.meta.location + '</span>' + '</li>');
         });
       })
-      .fail(function() {
+      .fail(function(data) {
+        $loaderContainer.fadeOut();
+        $messageListContainer.append('<li><span>' + JSON.stringify(data) + '</span></li>');
       })
       .always(function() {
       });
