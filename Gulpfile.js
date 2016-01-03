@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
+var concatCss = require('gulp-concat-css');
 
 gulp.task('browser-sync', function () {
   browserSync({
@@ -24,7 +25,8 @@ gulp.task('css', function () {
 gulp.task('sass', function() {
   gulp.src('./public/stylesheets/sass/**/*.scss')
   .pipe(sass().on('error', sass.logError))
-  .pipe(gulp.dest('./public/stylesheets/style.css'));
+  .pipe(concatCss('style.css'))
+  .pipe(gulp.dest('./public/stylesheets/'));
 });
 
 gulp.task('bs-reload', function () {
@@ -39,8 +41,7 @@ gulp.task('bs-reload-delay', function () {
 
 gulp.task('default', ['browser-sync'], function () {
   gulp.watch('./public/**/*.js',   ['js']);
-  gulp.watch('./public/**/*.scss',  ['sass']);
-  gulp.watch('./public/**/*.css',  ['css']);
+  gulp.watch('./public/**/*.scss',  ['sass', 'css']);
   gulp.watch('./views/**/*.jade', ['bs-reload']);
   gulp.watch(['./routes/**/*.js', './bin/www', './app.js'], ['bs-reload-delay']);
 });
